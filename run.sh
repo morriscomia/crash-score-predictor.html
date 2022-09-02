@@ -1,0 +1,1 @@
+FLASK_APP=driver_score/app.py flask run
