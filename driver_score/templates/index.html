@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Austin Driver Score Webpage" />
+    <meta name="title" property="og:title" content="Austin Driver Score" />
+    <meta property="og:type" content="Webpage" />
+    <meta name="image" property="og:image" content="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F06%2Finterstate-35-sign-austin-texas-INTERSTATE350530.jpg" />
+    <meta name="description" property="og:description" content="Austin Driver Score Webpage" />
+    <meta name="author" content="Cedric Lutonda" />
+    <title>Austin Driver Score Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 jumbotron text-center" style="background-image: url('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F06%2Finterstate-35-sign-austin-texas-INTERSTATE350530.jpg');
+        background-size: cover; background-position: center; color: white; height: 500px;">
+                    <h1 style="margin-top: 320px;">Austin Driver Score Dashboard</h1>
+                    <p>Use the interactive chart below to estimate your crash severity risk</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div><br><br></div>
+                    <div class="well">
+                        <h4>Enter your Personal and Vehicle Info and Day of travel</h4>
+                        <p>
+                            <form method="POST" action="/" role="form" , name="petform">
+                                <!-- Age Choice -->
+                                <label for="personAge">Enter your age:</label>
+                                <input type="text" class="form-control" id="inputAge" name="selectAge" placeholder="Age" minlength=2 maxlength=3 size="10" required>
+                                <span class="validity"></span>
+                                <div><br></div>
+                                <div>
+                                    <!-- Gender Choice -->
+                                    <label for="personGender">Choose your gender:</label>
+                                    <div>
+                                        <input type="radio" id="MALE" name="personGender" value="MALE">
+                                        <label for="MALE">Male</label>
+
+                                        <input type="radio" id="FEMALE" name="personGender" value="FEMALE">
+                                        <label for="FEMALE">Female</label>
+                                    </div>
+                                </div>
+                                <div></div>
+                                <div>
+                                    <!-- Car Year Choice -->
+                                    <label for="carYear">Enter your car model year:</label>
+                                    <input type="text" class="form-control" id="inputCarYear" name="carYear" placeholder="Year" minlength=4 maxlength=4 size="10" required>
+                                    <span class="validity"></span>
+                                </div>
+                                <div><br></div>
+                                <div>
+                                    <!-- Car Make Choice -->
+                                    <label for="carMake">Choose your car make:</label>
+                                    <div>
+                                        <input type="radio" id="ACURA" name="carMake" value="ACURA">
+                                        <label for="ACURA">Acura</label>
+                                        <input type="radio" id="BMW" name="carMake" value="BMW">
+                                        <label for="BMW">BMW</label>
+                                        <input type="radio" id="BUICK" name="carMake" value="BUICK">
+                                        <label for="BUICK">Buick</label>
+                                        <input type="radio" id="CADILLAC" name="carMake" value="CADILLAC">
+                                        <label for="CADILLAC">Cadillac</label>
+                                        <input type="radio" id="CHEVROLET" name="carMake" value="CHEVROLET">
+                                        <label for="CHEVROLET">Chevrolet</label>
+                                        <input type="radio" id="CHRYSLER" name="carMake" value="CHRYSLER">
+                                        <label for="CHRYSLER">Chrysler</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="DODGE" name="carMake" value="DODGE">
+                                        <label for="DODGE">Dodge</label>
+                                        <input type="radio" id="FORD" name="carMake" value="FORD">
+                                        <label for="FORD">Ford</label>
+                                        <input type="radio" id="GMC" name="carMake" value="GMC">
+                                        <label for="GMC">GMC</label>
+                                        <input type="radio" id="HONDA" name="carMake" value="HONDA">
+                                        <label for="HONDA">Honda</label>
+                                        <input type="radio" id="HYUNDAI" name="carMake" value="HYUNDAI">
+                                        <label for="HYUNDAI">Hyundai</label>
+                                        <input type="radio" id="INFINITY" name="carMake" value="INFINITY">
+                                        <label for="INFINITY">Infinity</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="JEEP" name="carMake" value="JEEP">
+                                        <label for="JEEP">Jeep</label>
+                                        <input type="radio" id="KIA" name="carMake" value="KIA">
+                                        <label for="KIA">Kia</label>
+                                        <input type="radio" id="LEXUS" name="carMake" value="LEXUS">
+                                        <label for="LEXUS">Lexus</label>
+                                        <input type="radio" id="MAZDA" name="carMake" value="MAZDA">
+                                        <label for="MAZDA">Mazda</label>
+                                        <input type="radio" id="MERCEDES-BENZ" name="carMake" value="MERCEDES-BENZ">
+                                        <label for="MERCEDES-BENZ">Mercedes-Benz</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="MITSUBISHI" name="carMake" value="MITSUBISHI">
+                                        <label for="MITSUBISHI">Mitsubishi</label>
+                                        <input type="radio" id="NISSAN" name="carMake" value="NISSAN">
+                                        <label for="NISSAN">Nissan</label>
+                                        <input type="radio" id="OTHER" name="carMake" value="OTHER">
+                                        <label for="OTHER">Other</label>
+                                        <input type="radio" id="RAM" name="carMake" value="RAM">
+                                        <label for="RAM">RAM</label>
+                                        <input type="radio" id="SUBARU" name="carMake" value="SUBARU">
+                                        <label for="SUBARU">Subaru</label>
+                                        <input type="radio" id="TOYOTA" name="carMake" value="TOYOTA">
+                                        <label for="TOYOTA">Toyota</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="VOLKSWAGEN" name="carMake" value="VOLKSWAGEN">
+                                        <label for="VOLKSWAGEN">Volkswagen</label>
+                                    </div>
+                                </div>
+                                <div><br></div>
+                                <div>
+                                    <!-- Car Body Choice -->
+                                    <label for="carBody">Choose your car body style:</label>
+                                    <div>
+                                        <input type="radio" id="SEDAN(2-DOOR)" name="carBody" value="SEDAN(2-DOOR)">
+                                        <label for="SEDAN(2-DOOR)">Sedan(2-Door)</label>
+                                        <input type="radio" id="SEDAN(4-DOOR)" name="carBody" value="SEDAN(4-DOOR)">
+                                        <label for="SEDAN(4-DOOR)">Sedan(4-Door)</label>
+                                        <input type="radio" id="PICKUP TRUCK" name="carBody" value="PICKUP TRUCK">
+                                        <label for="PICKUP TRUCK">PickUp Truck</label>
+                                        <input type="radio" id="SUV" name="carBody" value="SUV">
+                                        <label for="SUV">SUV</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="VAN" name="carBody" value="VAN">
+                                        <label for="VAN">Van</label>
+                                        <input type="radio" id="TRUCK(OTHER)" name="carBody" value="TRUCK(OTHER)">
+                                        <label for="TRUCK(OTHER)">Truck</label>
+                                        <input type="radio" id="MOTORCYCLE" name="carBody" value="MOTORCYCLE">
+                                        <label for="MOTORCYCLE">Motorcycle</label>
+                                        <input type="radio" id="OTHER" name="carBody" value="OTHER">
+                                        <label for="OTHER">Other</label>
+                                    </div>
+                                </div>
+                                <div><br></div>
+                                <div>
+                                    <!-- Travel Day Choice -->
+                                    <label for="travelDay">Day of travel:</label>
+                                    <div>
+                                        <input type="radio" id="MONDAY" name="travelDay" value="MONDAY">
+                                        <label for="MONDAY">Monday</label>
+                                        <input type="radio" id="TUESDAY" name="travelDay" value="TUESDAY">
+                                        <label for="TUESDAY">Tuesday</label>
+                                        <input type="radio" id="WEDNESDAY" name="travelDay" value="WEDNESDAY">
+                                        <label for="WEDNESDAY">Wednesday</label>
+                                        <input type="radio" id="THURSDAY" name="travelDay" value="THURSDAY">
+                                        <label for="THURSDAY">Thursday</label>
+                                        <input type="radio" id="FRIDAY" name="travelDay" value="FRIDAY">
+                                        <label for="FRIDAY">Friday</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="SATURDAY" name="travelDay" value="SATURDAY">
+                                        <label for="SATURDAY">Saturday</label>
+                                        <input type="radio" id="SUNDAY" name="travelDay" value="SUNDAY">
+                                        <label for="SUNDAY">Sunday</label>
+                                    </div>
+                                </div>
+                                <!-- <div><br></div> -->
+                                <!-- Submit Button -->
+                                <div>
+                                    <input type="submit" value="Submit" class="btn btn-default">
+                                    <a class="btn btn-primary" id="resetButton" role="button" style="background-color: grey; border: none; color: white;">Reset</a>
+                                </div>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+                <div><br></div>
+                <div class="col-md-7">
+                    <div id="gauge"></div>
+                </div>
+                <div class="col-md-7">
+                    <div id="barPlot"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div id="bubble"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/plot.js') }}"></script>
+</body>
+
+<script>
+    create_gauge_plot("{{predict}}")
+    var user = eval('({{ form_reuse | tojson | safe}})');
+    repopulate(user);
+</script>
+
+</html>
